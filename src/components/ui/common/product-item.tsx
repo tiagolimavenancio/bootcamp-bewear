@@ -17,12 +17,12 @@ const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
 
   return (
     <Link
-      href={`/product-variant/${firstVariant.slug}`}
+      href={`/product-variant/${firstVariant?.slug}`}
       className="flex flex-col gap-4"
     >
       <Image
-        src={firstVariant.imageUrl}
-        alt={firstVariant.name}
+        src={firstVariant?.imageUrl}
+        alt={firstVariant?.name}
         sizes="100vw"
         height={0}
         width={0}
@@ -39,7 +39,7 @@ const ProductItem = ({ product, textContainerClassName }: ProductItemProps) => {
           {product.description}
         </p>
         <p className="truncate text-sm font-semibold">
-          {formatCentsToBRL(firstVariant.priceInCents)}
+          {formatCentsToBRL(firstVariant?.priceInCents)}
         </p>
       </div>
     </Link>

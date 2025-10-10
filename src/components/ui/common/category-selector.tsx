@@ -17,7 +17,7 @@ const CategorySelector = ({ categories }: CategorySelectorProps) => {
             variant="ghost"
             className="rounded-full bg-white text-xs font-semibold"
           >
-            <Link href={`/category/${category.slug}`}>{category.name}</Link>
+            <Link href={`/category/${category?.slug}`}>{category?.name}</Link>
           </Button>
         ))}
       </div>
