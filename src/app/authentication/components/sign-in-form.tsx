@@ -67,7 +67,7 @@ const SignInForm = () => {
   }
 
   return (
-    <Card>
+    <Card className="w-full">
       <CardHeader>
         <CardTitle>Sign In</CardTitle>
         <CardDescription>Make sign in to enter.</CardDescription>
@@ -106,8 +106,10 @@ const SignInForm = () => {
               )}
             />
           </CardContent>
-          <CardFooter>
-            <Button type="submit">Enter</Button>
+          <CardFooter className="flex flex-col gap-2">
+            <Button className="w-full" type="submit">
+              Enter
+            </Button>
           </CardFooter>
         </form>
       </Form>
