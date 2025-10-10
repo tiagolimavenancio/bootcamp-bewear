@@ -63,9 +63,15 @@ const SignUpForm = () => {
           router.push("/");
         },
         onError: (ctx) => {
+          if (ctx.error.code === "USER_NOT_FOUND") {
+            toast.error("E-mail não encontrado.");
+            return form.setError("email", {
+              message: "E-mail não encontrado.",
+            });
+          }
           if (ctx.error.code === "USER_ALREADY_EXISTS") {
             toast.error("Email already exists");
-            form.setError("email", {
+            return form.setError("email", {
               message: "Email already exists",
             });
           }
