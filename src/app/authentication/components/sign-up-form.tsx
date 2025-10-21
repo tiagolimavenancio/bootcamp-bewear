@@ -63,19 +63,12 @@ const SignUpForm = () => {
           router.push("/");
         },
         onError: (ctx) => {
-          if (ctx.error.code === "USER_NOT_FOUND") {
-            toast.error("E-mail não encontrado.");
-            return form.setError("email", {
-              message: "E-mail não encontrado.",
-            });
-          }
           if (ctx.error.code === "USER_ALREADY_EXISTS") {
             toast.error("Email already exists");
             return form.setError("email", {
               message: "Email already exists",
             });
           }
-
           toast.error(ctx.error.message);
         },
       },
@@ -88,6 +81,7 @@ const SignUpForm = () => {
         <CardTitle>Sign Up</CardTitle>
         <CardDescription>Create account to get started.</CardDescription>
       </CardHeader>
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <CardContent className="grid w-full gap-6">
