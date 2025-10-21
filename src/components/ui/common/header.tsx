@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { Cart } from "@/components/ui/common/cart";
 import {
   Sheet,
   SheetContent,
@@ -77,6 +78,7 @@ export const Header = () => {
             </div>
           </SheetContent>
         </Sheet>
+        <Cart />
       </div>
     </header>
   );

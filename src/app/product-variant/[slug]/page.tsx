@@ -3,9 +3,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import React from "react";
 
-import QuantitySelector from "@/app/product-variant/[slug]/components/quantity-selector";
+import ProductActions from "@/app/product-variant/[slug]/components/product-actions";
 import VariantSelector from "@/app/product-variant/[slug]/components/variant-selector";
-import { Button } from "@/components/ui/button";
 import ProductList from "@/components/ui/common/product-list";
 import { db } from "@/db";
 import { productTable, productVariantTable } from "@/db/schema";
@@ -38,6 +37,7 @@ const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
       variants: true,
     },
   });
+
   return (
     <div className="flex flex-col space-y-6">
       <Image
@@ -63,18 +63,7 @@ const ProductVariantPage = async ({ params }: ProductVariantPageProps) => {
         </h3>
       </div>
 
-      <div className="px-5">
-        <QuantitySelector />
-      </div>
-
-      <div className="flex flex-col space-y-4 px-5">
-        <Button className="rounded-full" size="lg" variant="outline">
-          Add cart
-        </Button>
-        <Button className="rounded-full" size="lg">
-          Buy now
-        </Button>
-      </div>
+      <ProductActions productVariantId={productVariant.id} />
 
       <div className="px-5">
         <p className="text-shadow-amber-600">
