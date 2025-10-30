@@ -1,6 +1,7 @@
 "use client";
 
 import { ShoppingBasketIcon } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import CartItem from "@/components/ui/common/cart-item";
@@ -78,7 +79,7 @@ export const Cart = () => {
                 </div>
 
                 <Button className="mt-5 rounded-full" asChild>
-                  Finish purchase
+                  <Link href="/cart/identification">Finish purchase</Link>
                 </Button>
               </div>
             )}
