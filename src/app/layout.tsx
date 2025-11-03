@@ -36,7 +36,9 @@ export default function RootLayout({
         <ReactQueryProvider>
           <Header />
           {children}
-          <Footer />
+          <div className="mt-12">
+            <Footer />
+          </div>
         </ReactQueryProvider>
         <Toaster />
       </body>
