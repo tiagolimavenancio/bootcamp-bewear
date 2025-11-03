@@ -252,18 +252,18 @@ export const orderTable = pgTable("order", {
   shippingAddressId: uuid("shipping_address_id")
     .notNull()
     .references(() => shippingAddressTable.id, { onDelete: "set null" }),
-  recipientName: text().notNull(),
+  recipientName: text("recipient_name").notNull(),
   street: text().notNull(),
   number: text().notNull(),
   complement: text(),
   city: text().notNull(),
   state: text().notNull(),
   neighborhood: text().notNull(),
-  zipCode: text().notNull(),
+  zipCode: text("zip_code").notNull(),
   country: text().notNull(),
   phone: text().notNull(),
   email: text().notNull(),
-  cpfOrCnpj: text().notNull(),
+  cpfOrCnpj: text("cpf_or_cnpj").notNull(),
   totalPriceInCents: integer("total_price_in_cents").notNull(),
   status: orderStatus().notNull().default("pending"),
   createdAt: timestamp("created_at").$defaultFn(

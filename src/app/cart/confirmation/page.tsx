@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { CartSummary } from "@/app/cart/components/cart-summary";
+import FinishOrderButton from "@/app/cart/confirmation/components/finish-order-button";
 import { formatAddress } from "@/app/cart/helpers/address";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { db } from "@/db";
@@ -57,6 +58,7 @@ const ConfirmationPage = async () => {
             </CardContent>
           </Card>
         </CardContent>
+        <FinishOrderButton />
       </Card>
 
       <CartSummary
