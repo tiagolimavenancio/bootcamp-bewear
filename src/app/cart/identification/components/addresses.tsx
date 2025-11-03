@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { PatternFormat } from "react-number-format";
@@ -51,6 +52,8 @@ const Addresses = ({
   shippingAddresses,
   defaultShippingAddressId,
 }: AddressesProps) => {
+  const router = useRouter();
+
   const [selectedAddress, setSelectedAddress] = useState<string | null>(
     defaultShippingAddressId || null,
   );
@@ -102,6 +105,7 @@ const Addresses = ({
         shippingAddressId: selectedAddress,
       });
       toast.success("Selected address for delivery!");
+      router.push("/cart/confirmation");
     } catch (error) {
       console.error(error);
       toast.error("Error selecting address. Please try again.");
